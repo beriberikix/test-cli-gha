@@ -7,6 +7,6 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - run: gh release list
+      - run: gh auth status
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

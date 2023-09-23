@@ -6,7 +6,12 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+
     steps:
-      - run: gh release create v0.0.1 --notes "test"
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Create release
+        run: gh release create v0.0.1 --notes "test"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
